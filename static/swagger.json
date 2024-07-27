@@ -1,0 +1,125 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is the Crypto Market API documentation.",
+        "version": "1.0.0",
+        "title": "Crypto Market API"
+    },
+    "host": "localhost:5000",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "crypto",
+            "description": "Crypto operations"
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/crypto": {
+            "get": {
+                "tags": [
+                    "crypto"
+                ],
+                "summary": "Get top 10 cryptocurrencies",
+                "description": "",
+                "operationId": "get_crypto_data",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/coins": {
+            "get": {
+                "tags": [
+                    "crypto"
+                ],
+                "summary": "List all coins",
+                "description": "",
+                "operationId": "list_all_coins",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/categories": {
+            "get": {
+                "tags": [
+                    "crypto"
+                ],
+                "summary": "List coin categories",
+                "description": "",
+                "operationId": "list_coin_categories",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/market-data": {
+            "get": {
+                "tags": [
+                    "crypto"
+                ],
+                "summary": "Get market data for specific coins",
+                "description": "",
+                "operationId": "get_market_data",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "coin_ids",
+                        "in": "query",
+                        "description": "Comma separated list of coin IDs",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "description": "Category ID",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "page_num",
+                        "in": "query",
+                        "description": "Page number",
+                        "required": false,
+                        "type": "integer",
+                        "default": 1
+                    },
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "description": "Items per page",
+                        "required": false,
+                        "type": "integer",
+                        "default": 10
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        }
+    }
+}
